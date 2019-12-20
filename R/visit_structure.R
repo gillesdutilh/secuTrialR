@@ -89,4 +89,6 @@ plot.secuTrialvisit <- function(r, sorted = TRUE) {
   image(t(z), yaxt = "n", xaxt = "n", col = c("white", "black"))
   axis(2, r$formname, at = 0:(nrow(r) - 1) / (nrow(r) - 1), las = 1)
   axis(1, names, at = 0:(length(names) - 1) / (length(names) - 1), las = 2)
+  xlims = par('usr')
+  abline(v = seq(xlims[1], xlims[2], length = nrow(t(z))+1), col  = 'grey')
 }
